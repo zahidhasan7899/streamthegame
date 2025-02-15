@@ -3,27 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T Sports Live Streaming</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>HLS Video Player</title>
+    
+    <!-- Video.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.2/video-js.min.css" rel="stylesheet">
+    
+    <!-- hls.js -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    
+    <!-- Video.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.2/video.min.js"></script>
+    
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        video { width: 80%; max-width: 800px; margin-top: 20px; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>T Sports Live</h1>
-        <p>Watch Live Streaming Anytime, Anywhere!</p>
-    </header>
+    <h1>Live HLS Video Player</h1>
+    
+    <!-- HTML5 Video Player -->
+    <h2>HLS.js Player</h2>
+    <video id="hls-video" controls></video>
 
-    <main>
-        <div class="video-container">
-            <video id="liveStream" controls autoplay></video>
-        </div>
-    </main>
+    <!-- Video.js Player -->
+    <h2>Video.js Player</h2>
+    <video id="videojs-player" class="video-js vjs-default-skin" controls width="640" height="360"></video>
 
-    <footer>
-        <p>© 2025 T Sports Streaming | Powered by M3U8</p>
-    </footer>
+    <script>
+        var videoSrc = "https://dffgtrda.vffddd.online:8181/bein1/tracks-v1a1/mono.ts.m3u8";
 
-    <script src="script.js"></script>
+        // HLS.js Player
+        var hlsVideo = document.getElementById('hls-video');
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(hlsVideo);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                hlsVideo.play();
+            });
+        } else if (hlsVideo.canPlayType('application/vnd.apple.mpegurl')) {
+            hlsVideo.src = videoSrc;
+            hlsVideo.play();
+        }
+
+        // Video.js Player
+        var player = videojs('videojs-player', {
+            controls: true,
+            autoplay: false,
+            fluid: true,
+            sources: [{ src: videoSrc, type: "application/x-mpegURL" }]
+        });
+    </script>
 
 </body>
 </html>
