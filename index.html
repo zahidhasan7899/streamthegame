@@ -3,37 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video.js HLS Player</title>
-    
-    <!-- Video.js CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.2/video-js.min.css" rel="stylesheet">
-    
-    <!-- Video.js JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.5.2/video.min.js"></script>
-    
+    <title>Live Stream</title>
     <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        video { width: 80%; max-width: 800px; margin-top: 20px; }
+        body {
+            text-align: center;
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        video {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-
-    <h1>Live HLS Stream with Video.js</h1>
-    
-    <!-- Video.js Player -->
-    <video id="videojs-player" class="video-js vjs-default-skin" controls width="640" height="360">
-        <source src="https://dffgtrda.vffddd.online:8181/bein1/tracks-v1a1/mono.ts.m3u8" type="application/x-mpegURL">
-    </video>
-
-    <script>
-        var player = videojs('videojs-player', {
-            controls: true,
-            autoplay: false,
-            preload: 'auto',
-            fluid: true,
-            techOrder: ["html5"]
-        });
-    </script>
-
+    <h1>Live Stream</h1>
+    <iframe src="https://xiaolin.live/wowhaha.php?m3u8=https://livecdn.rumsport.com/stream/25/index.m3u8&id=2089&token=ce68324faaab5f3a7a61452e56df59d8cf8dce68.false.1739642400-suyK60DKgmX6n6dYpdUOisWTITHOICRRfNmxxahqGvE=&ver=2899435&parent=bingsport.watch&is_vip=false&image=https://img.bingsport.watch/static/common/img/matchs/1629425762.jpg&matchdate=1739653200" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
 </body>
 </html>
