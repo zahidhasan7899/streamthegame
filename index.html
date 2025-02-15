@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live TV Streaming</title>
+    <title>T Sports Live Streaming</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>Live TV Streaming</h1>
+        <h1>T Sports Live</h1>
+        <p>Watch Live Streaming Anytime, Anywhere!</p>
     </header>
 
     <main>
@@ -18,23 +20,10 @@
     </main>
 
     <footer>
-        <p>© 2025 Live Stream | Powered by M3U8</p>
+        <p>© 2025 T Sports Streaming | Powered by M3U8</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script>
-        var video = document.getElementById('liveStream');
-        var videoSrc = "https://dffgtrda.vffddd.online:8181/bein1/tracks-v1a1/mono.ts.m3u8";
+    <script src="script.js"></script>
 
-        if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = videoSrc;
-        } else if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(videoSrc);
-            hls.attachMedia(video);
-        } else {
-            alert("Your browser does not support live streaming.");
-        }
-    </script>
 </body>
 </html>
