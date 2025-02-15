@@ -1,10 +1,13 @@
 body {
-    text-align: center;
-    background-color: #222;
+    background-color: #121212;
     color: white;
+    text-align: center;
     font-family: Arial, sans-serif;
 }
-iframe {
-    border: none;
+h1 {
     margin-top: 20px;
+}
+.video-js {
+    border: 2px solid white;
+    border-radius: 10px;
 }
